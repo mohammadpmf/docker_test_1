@@ -43,10 +43,10 @@ docker-compose down
 py manage.py ...
 چون الان در کانتینر در حال اجرا هستند.
 ما باید به داکر بگیم که به داخل کودوم کانتینرش بره و اجرا کنه. پس تو مثال ما این شکلی میشه
-docker-compose exec web py manage.py createsuperuser
+docker-compose exec web python manage.py createsuperuser
 و
 غیره
-docker-compose exec web py manage.py ...
+docker-compose exec web python manage.py ...
 web همون اسمی هست که تو فایل داکر کامپوز تو قسمت سرویسس نوشتیم. در واقع یه سرویس وب داریم که 
 اون در حال اجراست. به داکر میگیم که بره روی اون سرویس این دستور رو اجرا کنه.
 اون قسمت
@@ -56,3 +56,13 @@ volumes:
 ما هم بذار و تغییرات اونجا رو تو پروژه خودمون هم داشته باشیم.
 برای وصل شدن پایتون به پستگرس، لازمه که این پکیج نصب شه.
 docker-code exec web pip install psycopg2-binary
+
+نکته آخر این که داکر خودش لینوکس بیسد هست و کانتینر ها رو هم انگار تو لینوکس میشناسه. تو دستورات وقتی مینوشتم
+py
+کار نمیکرد. چون برای ویندوز هست. اما
+python
+کار میکرد. یعنی تو دستور
+docker-compose exex web python 
+اینجا دیگه
+py
+کار نمیکنه.
